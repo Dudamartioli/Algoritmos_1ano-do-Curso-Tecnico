@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 5, ex. 5</title>
+</head>
+<body>
+    <!--Não é possível dividir um número qualquer por 0 (zero). Deste modo, faça um programa de computador 
+    que divida um número por outro (dividendo e divisor), informados pelo usuário. 
+    Tomando o cuidado de verificar se o divisor não é igual a zero.-->
+
+    <h1>Divisão</h1>
+    <label for="inputdividendo">Valor do dividendo</label>
+    <input type="number" id="inputdividendo">
+    <br>
+    <label for="inputdivisor">Valor do divisor</label>
+    <input type="number" id="inputdivisor">
+    <br>
+    <input type="button" value="calcular" onclick="fcalcular()">
+    <br>
+    <label for="resp">Resultado =</label>
+    <span id="resp"></span>
+
+    <script>
+        function fcalcular(){
+            let dividendo=parseFloat(document.getElementById("inputdividendo").value);
+            let divisor=parseFloat(document.getElementById("inputdivisor").value);
+            let resp
+            if(dividendo==0||divisor==0){
+                resp="Não se pode dividir um número qualquer por zero"
+            }else{
+                resp= dividendo/divisor
+            }
+            document.getElementById("resp").innerHTML=resp
+        }
+    </script>
+</body>
+</html>

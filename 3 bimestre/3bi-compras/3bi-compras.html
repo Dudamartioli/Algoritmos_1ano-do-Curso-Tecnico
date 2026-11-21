@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de compras</title>
+</head>
+<body>
+    <!--
+    Faça um programa usando JS e HTML que leia e armazene os dados para uma lista de compras. 
+    Os atributos são nome_produto, quantidade, preco_unitario. Organize seu projeto criando uma 
+    pasta para conter os arquivos produto.js, compras.html e compras.js.
+    -->
+    <h1>Lista de compras</h1>
+    <input type="text" id="inputproduto" placeholder="Nome do produto">
+    <input type="number" id="inputquantidade" placeholder="Quantidade">
+    <input type="number" id="inputpreco" placeholder="Preço unitário">
+    <input type="button" value="armazenar" onclick="farmazenar()">
+    <input type="button" value="dados iniciais" onclick="fdadosiniciais()">
+    <br>
+    <span id="resp"></span>
+
+    <br>
+    <h3>Quantidade multiplicada pelo preço unitário</h3>
+    <input type="button" value="multiplicar" onclick="fmultiplicar()">
+    <br>
+    <span id="multiplicacao"></span>
+
+    <br>
+    <h3>Valor total da compra</h3>
+    <input type="button" value="calcular" onclick="ftotal()">
+    <span id="resptotal"></span>
+
+    <br>
+    <h3>Ache um produto</h3>
+    <input type="text" id="inputachar" placeholder="Digite o nome">
+    <input type="button" value="achar" onclick="fachar()">
+    <br>
+    <span id="respachar"></span>
+
+    <br>
+    <h3>O mais caro</h3>
+    <input type="button" value="procurar" onclick="fcaro()">
+    <span id="respcaro"></span>
+
+    <br>
+    <h3>Total de itens adquiridos</h3>
+    <input type="button" value="calcular" onclick="fitens()">
+    <span id="respitens"></span>
+
+    <script src="./3bi-compras2.js"></script>
+    <script src="./3bi-compras.js"></script>
+</body>
+</html>

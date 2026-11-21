@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>Matriz</h1>
+    <input type="number" id="inputn" placeholder="Digite o número">
+    <br>
+    <input type="button" value="iniciar" onclick="iniciar()">
+    <input type="button" value="adicionar" onclick="fadd()">
+    <br> <br>
+    <span id="resp"></span>
+    <br>
+    <h3>Soma dos elementos de cada coluna.</h3>
+    <input type="button" value="somar" onclick="fsomarcoluna()">
+    <br>
+    <span id="respsoma"></span>
+
+    <script>
+    let matriz = [];
+        let linhas = 0;
+        let colunas = 0;
+        let linha = 0;
+        let coluna = 0;
+        let posAtual = 0;
+
+        function iniciar() {
+           matriz=[[1,1,1,1],[2,2,2,2],[3,3,3,3]]
+
+            atualizarSaida();
+            document.getElementById("inputn").focus();
+        }
+
+        function fadd() {
+            if (posAtual >= linhas * colunas) {
+                alert("A matriz já está completa.");
+                return;
+            }
+
+            let input = document.getElementById("inputn");
+            let valor = parseFloat(input.value);
+
+            matriz[linha][coluna] = valor;
+
+            if(coluna<colunas-1) {
+                coluna++;
+            } else {
+                coluna = 0;
+                linha++;
+            }
+            posAtual++;
+
+
+
+            atualizarSaida();
+
+            input.value = "";
+            input.focus();
+
+            if (posAtual >= linhas * colunas) {
+                input.disabled = true;
+            }
+        }
+
+        function atualizarSaida() {
+            let texto = "";
+            for (let i = 0; i < matriz.length; i++) {
+                for (let j = 0; j < matriz[i].length; j++) {
+                    let valor = matriz[i][j];
+                    if (valor === "") {
+                        texto += "_";
+                    } else {
+                        texto += valor;
+                    }
+                    texto += " ";
+                }
+                texto += "\n";
+            }
+            document.getElementById("resp").innerText = texto;
+        }
+        </script>
+
+</body>
+</html>

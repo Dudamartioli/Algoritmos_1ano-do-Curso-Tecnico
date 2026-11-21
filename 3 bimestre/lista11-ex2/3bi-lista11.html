@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex. 2</title>
+</head>
+<body>
+    <!--
+    2) Leia uma matriz de ordem 3x4 (3 linhas e 4 colunas).Faça uma função (para cada item) que calcule e mostre.
+a) soma dos elementos de cada coluna.
+b) média de cada linha.
+c) a soma de todos os elementos da matriz.
+    -->
+
+    <h1>Matriz</h1>
+    <input type="number" id="inputn" placeholder="Digite o número">
+    <br>
+    <input type="button" value="iniciar" onclick="iniciar()">
+    <input type="button" value="adicionar" onclick="fadd()">
+    <br> <br>
+    <span id="resp"></span>
+    <br>
+    <h3>Soma dos elementos de cada coluna.</h3>
+    <input type="button" value="somar" onclick="fsomarcoluna()">
+    <br>
+    <span id="respsoma"></span>
+
+    <br>
+    <h3>Média de cada linha.</h3>
+    <input type="button" value="média" onclick="fmedia()">
+    <br>
+    <span id="respmedia"></span>
+
+    <script src="./lista11-ex2.js"></script>
+</body>
+</html>

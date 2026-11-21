@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 7, ex. 8</title>
+</head>
+<body>
+    <!--
+    Faça o programa que considere como entrada de dados o vetor: [5, 9, 6, 7, 4, 2, 6, 7, 9, 10, 2]
+
+Crie um botão e uma função para cada item abaixo: 
+a) Some todos os números.
+b) Calcule a média aritmética.
+c) Conte quantas vezes um número específico, fornecido pelo usuário, aparece no vetor.
+    -->
+    <h1>Vetor</h1>
+    <label for="inputc">Conjunto</label>
+    <input type="number" id="inputc" placeholder="digite aqui">
+    <br>
+    <input type="button" value="adicionar" onclick="fadicionar()">
+    <br>
+    <label for="resp"></label>
+    <span id="resp">...</span>
+
+    <br>
+    <input type="button" value="somar" onclick="fsomar()">
+    <br>
+    <label for="respa"></label>
+    <span id="respa">...</span>
+
+    <br>
+    <input type="button" value="média" onclick="fmedia()">
+    <br>
+    <label for="respb"></label>
+    <span id="respb">...</span>
+
+    <br>
+    <label for="inputv">Quantas vezes esse número se repete</label>
+    <input type="number" id="inputv" placeholder="digite aqui">
+    <br>
+    <input type="button" value="ver" onclick="fver()">
+    <br>
+    <label for="respc"></label>
+    <span id="respc">...</span>
+
+    <script>
+        let conjunto = []
+        let soma = 0
+
+        function fadicionar(){
+            let elementoInput = document.getElementById("inputc")
+            let n= parseFloat(elementoInput.value)
+            if(!isNaN(n)){
+                conjunto.push(n)
+                document.getElementById("resp").innerHTML= "[" + conjunto + "]"
+
+                elementoInput.value=""
+                elementoInput.focus()
+            } else{
+                alert("DIGITE UM NÉMERO!!!!!!!!")
+            }
+            
+        }
+
+        function fsomar(){
+            debugger
+            let soma = 0
+            for(let i=0; i<conjunto.length ; i++) {
+                soma = soma + conjunto[i]
+            }
+            document.getElementById("respa").innerHTML=soma
+            return soma
+        }
+
+        function fmedia(){
+            debugger
+            let soma = fsomar()
+            let media = soma/conjunto.length
+            document.getElementById("respb").innerHTML=media
+        }
+
+        function fver(){
+            let repetido=parseFloat(document.getElementById("inputv").value)
+            let respv = 0
+            for(let i=0; i<conjunto.length; i++){
+                if(conjunto[i]==repetido){
+                    respv= respv + 1
+                }
+            }
+            document.getElementById("respc").innerHTML= respv
+        }
+    </script>
+
+</body>
+</html>

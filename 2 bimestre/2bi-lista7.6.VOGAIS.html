@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 7, ex. 6</title>
+</head>
+<body>
+    <!--
+    Escreva um programa que conta o número de vogais em uma string.
+    -->
+    <h1>Número de vogais</h1>
+    <label for="inputn">Nome</label>
+    <input type="text" id="inputn" placeholder="escreva aqui">
+    <br>
+    <input type="button" value="ver" onclick="fver()">
+    <br>
+    <label for="resp"></label>
+    <span id="resp"></span>
+
+    <script>
+        function fver(){
+            debugger
+            let n=document.getElementById("inputn").value
+            let cont = 0
+            let palavra= n.toUpperCase()
+            for(let i=0; i<=palavra.length; i++){
+                if(palavra[i]=="A"|| palavra[i]=="E"|| palavra[i]=="I"||palavra[i]=="O"||palavra[i]=="U"){
+                    cont= cont + 1
+                }
+            }
+            document.getElementById("resp").innerHTML=cont
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CRUD Imóvel</title>
+</head>
+
+<body>
+
+   <h1>Imóvel</h1>
+
+   <label for="inputMatricula">Número de Matrícula</label>
+   <input type="number" name="inputMatricula" id="inputMatricula">
+   <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+
+   <label for="inputEndereco">Endereço</label>
+   <input type="text" name="inputEndereco" id="inputEndereco">
+   <br>
+
+   <label for="inputBairro">Bairro</label>
+   <input list="bairros" name="inputBairro" id="inputBairro" placeholder="Ex: Itaquera">
+   <datalist id="bairros">
+    <option value="Itaquera">
+    <option value="Centro">
+    <option value="Barra da Tijuca">
+    <option value="Copacabana">
+    <option value="Ipanema">
+   </datalist>
+
+   <br>
+   <label for="inputTipo">Tipo</label>
+   <input list="tipos"  name="inputTipo" id="inputTipo" placeholder="Ex: Residencial">
+   <datalist id="tipos">
+    <option value="Residencial">
+    <option value="Comercial">
+    <option value="Rural">
+   </datalist>
+
+
+   <br>
+   <label for="inputArea">Área</label>
+   <input type="number" name="inputArea" id="inputArea">
+   <br>
+   <label for="inputComodos">Comodos</label>
+   <input type="number" name="inputComodos" id="inputComodos">
+   <br>
+   <label for="inputAlugado">Alugado</label>
+   <input type="checkbox" name="inputAlugado" id="inputAlugado">
+   <br>
+   <label for="inputData">Data De Conclusão Da Construção</label>
+   <input type="date" name="inputData" id="inputData">
+   <br>
+
+
+   <!--<label for="inputCategoria">Categoria</label>
+   <input list="categorias" id="inputCategoria" name="inputCategoria" placeholder="Ex: Cadernos">
+   <datalist id="categorias">
+      <option value="Caderno">
+      <option value="Caneta">
+      <option value="Lápis">
+      <option value="Borracha">
+   </datalist>
+   -->
+
+
+   <br><br>
+   <div id="divAviso" style="background-color: antiquewhite;"></div>
+   <br>
+   <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+   <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+   <br><br>
+   <!-- <input type="button" value="Listar" onclick="listar()"> -->
+   <br><br>
+
+   <!-- selecionar por categorias
+   <label for="selectCategorias">Filtrar por Categoria:</label>
+   <select id="selectCategorias" onchange="filtrarPorCategoria()">
+      <option value="todas">Todas</option>
+      <option value="Caderno">Caderno</option>
+      <option value="Caneta">Caneta</option>
+      <option value="Lápis">Lápis</option>
+      <option value="Borracha">Borracha</option>
+   </select>
+   -->
+   <br><br>
+
+
+   <div id="outputSaida" style="background-color: aqua;">...</div>
+
+   <input type="button" value="Persistir" id="btPersisitir" onclick="prepararESalvarCSV()">
+   <input type="button" value="Recuperar" id="btRecuperar" onclick="abrirArquivoSalvoEmLocalPermanente()">
+   <script src="./imovel.js"></script>
+   <script src="./imovelControle.js"></script>
+</body>
+
+</html>

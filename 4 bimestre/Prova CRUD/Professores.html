@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Professores</title>
+</head>
+
+<body   style="background-color: mediumpurple;">
+
+<h1  style="color: rgb(241, 238, 237);">Professores</h1>
+<label for="inputid_prof"  style="color: rgb(241, 238, 237);">id_prof</label>
+<input type="number" name="id_prof" id="inputid_prof"  style="background-color: rgb(235, 215, 250);">
+<input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;" style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);" >
+<input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<br><br>
+
+<label for="inputnome" style="color: rgb(241, 238, 237);">nome</label>
+<input type="text" name="inputnome" id="inputnome" style="background-color: rgb(235, 215, 250);">
+<br>
+
+<label for="inputdisciplina" style="color: rgb(241, 238, 237);">disciplina</label>
+<input list="disciplina" name="inputdisciplina" id="inputdisciplina" style="background-color: rgb(235, 215, 250);" placeholder="Ex: Algoritmos">
+<datalist id="disciplina">
+    <option value="Matemática">
+    <option value="Algoritmos">
+    <option value="Física">
+    <option value="Química">
+</datalist>
+<br>
+
+<label for="inputtempo_experiencia" style="color: rgb(241, 238, 237);">tempo_experiencia</label>
+<input type="number" name="inputtempo_experiencia" id="inputtempo_experiencia" style="background-color: rgb(235, 215, 250);">
+<br>
+
+<label for="inputtitulacao" style="color: rgb(241, 238, 237);">titulacao</label>
+<!--<input type="text" name="inputtitulacao" id="inputtitulacao" style="background-color: rgb(235, 215, 250);">-->
+<select id="inputtitulacao"  style="background-color: rgb(235, 215, 250);">
+        <option value="">-- Selecione uma opção --</option>
+        <option value="Graduado">Graduado</option>
+        <option value="Especialista">Especialista</option>
+        <option value="Mestre">Mestre</option>
+        <option value="Doutor">Doutor</option>
+</select>
+<br>
+
+<label for="inputaposentado" style="color: rgb(241, 238, 237);">aposentado</label>
+<input type="checkbox" name="inputaposentado" id="inputaposentado" style="background-color: rgb(235, 215, 250);">
+<br>
+
+<label for="inputdata_contratacao" style="color: rgb(241, 238, 237);">data_contratacao</label>
+<input type="date" name="inputdata_contratacao" id="inputdata_contratacao" style="background-color: rgb(235, 215, 250);">
+<br><br>
+
+<label for="inputFiltraTitulacao" style="color: rgb(241, 238, 237);">Filtrar por titulação</label>
+<input type="text" name="inputFiltraTitulacao" id="inputFiltraTitulacao" style="background-color: rgb(235, 215, 250);" placeholder="Qual titulação?">
+<input type="button" value="Filtrar" id="inputFiltraTitulacao" onclick="ListarPorTitulacao()" style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<br><br>
+
+<label for="ultimoSobrenomeS" style="color: rgb(241, 238, 237);">Últimos sobrenomes que iniciam com S</label>
+<input type="button" value="Filtrar" id="ultimoSobrenomeS" onclick="ListarProfessoresSobrenomeS()" style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<br>
+
+<br><br>
+
+<div id="divAviso" style="color: rgb(241, 238, 237);"></div>
+<br><input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<br><br>
+
+<div id="outputSaida" style="background-color: rgb(235, 215, 250);">...</div>
+<input type="button" value="Persistir" id="btPersisitir" onclick="prepararESalvarCSV()"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<input type="button" value="Recuperar" id="btRecuperar" onclick="abrirArquivoSalvoEmLocalPermanente()"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+</body>
+<script src="./Professores.js"></script>
+<script src="./ProfessoresControle.js"></script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CRUD Aluno</title>
+</head>
+
+<body>
+
+   <h1>Cadastro de Aluno</h1>
+
+   <label for="inputRA">RA</label>
+   <input type="text" name="inputRA" id="inputRA">
+   <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+
+   <label for="inputNome">Nome</label>
+   <input type="text" name="inputNome" id="inputNome">
+   <br><br>
+   <!-- 
+   <label for="inputFabricante">Fabricante</label>
+   <input type="text" name="inputFabricante" id="inputFabricante">
+   <br> -->
+   <label for="inputData">Data de nascimento</label>
+   <input type="date" name="inputData" id="inputData">
+   <br><br>
+
+   <label for="inputEhmatriculado">É Matriculado?</label>
+   <input type="checkbox" name="inputEhmatriculado" id="inputEhmatriculado">
+   <br><br>
+
+   <label for="inputCurso">Escolha um curso:</label>
+   <select name="inputCurso" id="inputCurso">
+      <option value="tecnico">Ensino médio técnico em informática</option>
+      <option value="ensinomedio">Ensino médio</option>
+      <option value="bcc">BCC</option>
+   </select>
+   <br><br>
+
+
+   <br><br>
+   <div id="divAviso" style="background-color: antiquewhite;"></div>
+   <br>
+   <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+   <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+   <br><br>
+   <!-- <input type="button" value="Listar" onclick="listar()">
+    <br><br> -->
+
+   <div id="outputSaida" style="background-color: aqua;">...</div>
+
+   <input type="button" value="Persistir" id="btPersisitir" onclick="prepararESalvarCSV()">
+   <input type="button" value="Recuperar" id="btRecuperar" onclick="abrirArquivoSalvoEmLocalPermanente()">
+   <script src="./aluno.js"></script>
+   <script src="./alunoControle.js"></script>
+</body>
+
+</html>

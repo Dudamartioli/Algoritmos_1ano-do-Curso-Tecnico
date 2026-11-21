@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1, ex 4</title>
+</head>
+<body>
+    <!--
+    Faça um programa de computador para calcular a área de um retângulo. Area = base * altura
+    -->
+    <h1>Área do retângulo</h1>
+    <label for="inputb">Base</label>
+    <input type="number" name="inputb" id="inputb">
+    <br>
+    <label for="inputa">Altura</label>
+    <input type="number" name="inputa" id="inputa">
+    <br>
+    <input type="button" value="calcular" onclick="farea()">
+    <br>
+    <label for="area">Área =</label>
+    <span id="area"></span>
+
+    <script>
+        function farea() {
+            let b = parseFloat(document.getElementById("inputb").value);
+            let a = parseFloat(document.getElementById("inputa").value);
+            let area = b * a;
+            document.getElementById("area").innerHTML = area
+        }
+    </script>
+</body>
+</html>

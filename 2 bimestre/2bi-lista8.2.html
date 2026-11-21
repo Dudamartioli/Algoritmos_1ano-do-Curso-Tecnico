@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 8, ex 2</title>
+</head>
+<body>
+    <!--
+    Escreva um programa que conta o número de vezes que uma determinada palavra aparece em uma frase. 
+    Por exemplo, Frase: "O cachorro correu atrás do gato, e o gato correu para cima da árvore." 
+    a palavra: "correu" aparece 2 vezes na frase.
+    -->
+    <h1>Quantas vezes a palavra selecionada aparece em uma frase</h1>
+    <label for="inputf">Frase</label>
+    <input type="text" id="inputf" placeholder="escreva aqui">
+    <br>
+    <label for="inputp">Qual palavra você quer ver quantas vezes se repete?</label>
+    <input type="text" id="inputp" placeholder="digite aqui">
+    <br>
+    <input type="button" value="contar" onclick="fcontar()">
+    <br>
+    <span id="resp">...</span>
+
+    <script>
+        function fcontar(){
+            let f=(document.getElementById("inputf").value).toUpperCase();
+            let p=(document.getElementById("inputp").value).toUpperCase();
+            let espacos=" "
+            let totalespacos = 0
+            for(let i=0; i<p.length; i++){
+                if(p[i]==espacos){
+                    totalespacos = totalespacos + 1
+                    if(totalespacos>1){
+                        alert("Digite somente uma palavra!!!!!!!")
+                    }
+                }
+            }
+            let vezes=fvezes(p,f)
+            document.getElementById("resp").innerHTML=vezes
+        }
+
+        function fvezes(p,f){
+            debugger
+            let resp=0
+            let f2=f.split(" ")
+            for(let i=0; i<f2.length; i++){
+                if(f2[i]==p){
+                    resp = resp + 1
+                }
+            }
+            return resp
+        }
+    </script>
+</body>
+</html>

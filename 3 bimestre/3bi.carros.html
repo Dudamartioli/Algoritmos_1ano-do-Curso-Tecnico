@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Adicionar ao Vetor</title>
+</head>
+
+<body>
+
+    <h2>Adicionar Número ao Vetor</h2>
+
+    <input type="text" id="inputplaca" placeholder="Digite um número">
+    <input type="text" id="inputmodelo" placeholder="Digite o modelo">
+    <input type="text" id="inputmarca" placeholder="Digite a marca">
+    <input type="text" id="inputano" placeholder="Digite o ano 00/00/00">
+    <button onclick="adicionarcarro()">Adicionar</button>
+
+    <h3>Conjunto (vetor):</h3>
+    <p id="saidaVetor">[]</p>
+
+    <br>
+    <h3>Procurar todos os carros de uma marca</h3>
+    <input type="text" id="inputmarcanovo" placeholder="infome a marca">
+    <input type="button" value="ver" onclick="marcasdecarro()">
+    <br>
+    <p id="respmarca">[]</p>
+
+    <script src="./3bi.carros.js"></script>
+
+</body>
+
+</html>

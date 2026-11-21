@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 5, ex. 8</title>
+</head>
+<body>
+    <!--
+    Faça um algoritmo que receba três números como entrada e informe qual deles é o maior.
+    -->
+    <h1>Descubra qual número é maior!</h1>
+    <label for="inputn1">Valor 1</label>
+    <input type="number" id="inputn1">
+    <br>
+    <label for="inputn2">Valor 2</label>
+    <input type="number" id="inputn2">
+    <br>
+    <label for="inputn3">Valor 3</label>
+    <input type="number" id="inputn3">
+    <br>
+    <input type="button" value="descobrir" onclick="fdescobrir()">
+    <br>
+    <label for="resp">O maior valor é:</label>
+    <span id="resp"></span>
+
+    <script>
+        function fdescobrir() {
+            let n1=parseFloat(document.getElementById("inputn1").value)
+            let n2=parseFloat(document.getElementById("inputn2").value)
+            let n3=parseFloat(document.getElementById("inputn3").value)
+            let resp
+            if(n1>n2&&n1>n3){
+                resp=n1
+            }else if(n2>n1&&n2>n3){
+                resp=n2
+            }else{
+                resp=n3
+            }
+            document.getElementById("resp").innerHTML=resp
+        }
+    </script>
+</body>
+</html>

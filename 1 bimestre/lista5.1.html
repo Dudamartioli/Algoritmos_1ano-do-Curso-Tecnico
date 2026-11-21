@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 5, ex. 1</title>
+</head>
+<body>
+    <!--
+    Escreva um programa que resolva o seguinte problema: uma cópia “xerox” custa R$ 0,25 por folha, 
+    mas acima de 100 folhas esse valor cai para R$ 0,20 por unidade. Dado o total de cópias, informe o valor a ser pago.
+    -->
+    <label for="inputn">Número de cópias</label>
+    <input type="number" id="inputn">
+    <br>
+    <input type="button" value="calcular" onclick="fcalcular()">
+    <br>
+    <label for="resp">Valor a ser pago:</label>
+    <span id="resp"></span>
+
+    <script>
+        function fcalcular() {
+            let n=parseInt(document.getElementById("inputn").value)
+            let resp
+            if(n<100){
+                resp=n*0.25
+            }else{
+                resp=n*0.20
+            }
+            document.getElementById("resp").innerHTML=resp
+        }
+    </script>
+</body>
+</html>

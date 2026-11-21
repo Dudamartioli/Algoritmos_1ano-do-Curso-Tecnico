@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>somar números</title>
+</head>
+<body>
+    <!--
+    Faça um programa que leia uma série de números inteiros e some esses números.
+    -->
+    <h1>Ler uma série de números inteiros e somar todos</h1>
+    <label for="inputn">Números</label>
+    <input type="number" id="inputn" placeholder="digite aqui">
+    <br>
+    <input type="button" value="adicionar número" onclick="fnumero()">
+    <br>
+    <label for="respn"></label>
+    <span id="respn">...</span>
+    <br>
+    <input type="button" value="somar" onclick="fsoma()">
+    <br>
+    <span id="resps">...</span>
+
+    <script>
+        let conjunto = []
+
+        function fnumero() {
+            let n = parseInt(document.getElementById("inputn").value)
+            if(!isNaN(n)){
+                respn = n
+                conjunto.push(n)
+                document.getElementById("respn").innerHTML= "[" + conjunto + "]"
+
+                document.getElementById("inputn").value = ""
+                document.getElementById("inputn").focus()
+
+            }else{
+                alert("digite um número, songa!")
+            }
+
+        }
+
+        function fsoma(respn) {
+            debugger
+            let resps = 0
+            for(let i=0; i<conjunto.length; i++) {
+                resps = resps + conjunto[i]
+            }
+            document.getElementById("resps").innerHTML=resps
+        }
+    </script>
+</body>
+</html>

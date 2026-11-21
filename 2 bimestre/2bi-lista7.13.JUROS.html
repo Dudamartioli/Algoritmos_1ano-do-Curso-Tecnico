@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 7, ex 13</title>
+</head>
+<body>
+    <!--
+    Faça um programa que calcule o valor das parcelas de um produto comprado a prazo.
+O usuário deve informar:
+
+o valor do produto,
+a taxa de juros mensal (em %),
+e a quantidade de meses para o pagamento.
+O programa deve:
+
+calcular o valor total a ser pago com os juros aplicados,
+e o valor de cada parcela (valor total / meses).
+Use laço de repetição no cálculo.
+    -->
+
+    <h1>Valor das parcelas de um produto comprado a prazo</h1>
+    <label for="inputv">Valor</label>
+    <input type="number" id="inputv" placeholder="digite aqui">
+    <br>
+    <label for="inputjuros">Taxa de juros mensal em %</label>
+    <input type="number" id="inputjuros" placeholder="digite aqui">
+    <br>
+    <label for="inputmeses">Quantidade de meses para o pagamento</label>
+    <input type="number" id="inputmeses" placeholder="digite aqui">
+    <br>
+    <input type="button" value="Calcular" onclick="fcalcular()">
+    <br>
+    <span id="resp">...</span>
+
+    <script>
+        function fcalcular(){
+            let valor=parseFloat(document.getElementById("inputv").value)
+            let juros=parseFloat(document.getElementById("inputjuros").value)
+            let meses=parseInt(document.getElementById("inputmeses").value)
+            let valortotal = valor
+            for(let i=1; i<=meses; i++){
+                valortotal= valortotal + (i + juros/100*valor)
+            }
+            let parcela= valortotal/meses
+
+            document.getElementById("resp").innerHTML= 
+            "O valor total com juros é " + valortotal.toFixed(2) + "<br>" +
+            "O valor de cada parcela é " + parcela.toFixed(2)
+        }
+    </script>
+</body>
+</html>

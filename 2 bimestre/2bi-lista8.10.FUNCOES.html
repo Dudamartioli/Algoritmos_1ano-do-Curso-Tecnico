@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 8, ex 10</title>
+</head>
+<body>
+    <!--
+    Faça um algoritmo que permita ao usuário informar a idade de quantas pessoas ele desejar. Após isso o algoritmo deve:
+
+contar quantas pessoas tem mais de 21 anos
+contar quantas pessoas nasceram em anos bissextos
+somar todas as idades
+calcular a média das idades
+    -->
+
+    <h1>idades</h1>
+    <input type="number" id="inputi" placeholder="digite aqui">
+    <br>
+    <input type="button" value="calcular" onclick="fcalcular()">
+    <br>
+    <span id="resp">[]</span>
+
+    <script>
+        let conjunto=[]
+
+        function fcalcular(){
+            debugger
+            let elementoInput = document.getElementById("inputi");
+
+            let numero = parseFloat(elementoInput.value);
+
+            if (!isNaN(numero)) { 
+                conjunto.push(numero);
+
+                elementoInput.value = ""; 
+              elementoInput.focus();               
+            } else {
+                alert("Por favor, digite um número válido!!!");
+            }
+            let mais21= 0
+            let resp21 = fmais21(mais21)
+            let respano= 0
+            let anob = fano(respano)
+            let soma = 0
+            let respsoma = fsoma(soma)
+            let respmedia = fmedia(respsoma)
+
+            document.getElementById("resp").innerHTML = conjunto + "<br>" + "Pessoas com mais de 21 anos = " + resp21 +
+             "<br>" + "Pessoas que nasceram em ano bissexto = " + anob + "<br>" + "Soma de todas as idades = " + respsoma +
+             "<br>" + "Média de todas as idades = " + respmedia.toFixed(2);
+        }
+
+        function fmais21(mais21){
+            for(let i=0; i<conjunto.length; i++){
+                if(conjunto[i]>=21){
+                    mais21 = mais21 + 1
+                }
+            }
+            return mais21
+        }
+
+        function fano(respano){
+           for(let i=0; i<conjunto.length; i++){
+                if((2025 - conjunto[i])%4 == 0){
+                respano = respano + 1
+                }
+           }
+           return respano 
+        }
+
+        function fsoma(soma){
+            for(let i=0; i<conjunto.length; i++){
+                soma = soma + conjunto[i]
+            }
+            return soma
+        }
+
+        function fmedia(respsoma){
+            let media= respsoma/conjunto.length
+            return media
+        }
+    </script>
+</body>
+</html>

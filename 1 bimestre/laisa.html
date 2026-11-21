@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laísa</title>
+</head>
+
+<body>
+    <h1>Contador de Calorias do dia</h1>
+    <label for="cafe">Café da manhã</label>
+    <input type="number" id="cafe">
+    <br>
+
+    <label for="almoco">Almoço</label>
+    <input type="number" id="almoco">
+    <br>
+
+    <label for="jantar">Jantar</label>
+    <input type="number" id="jantar">
+    <br>
+
+    <label for="lanche">Lanche</label>
+    <input type="number" id="lanche">
+    <br>
+
+    <input type="button" value="contar" onclick="fcalcular()">
+
+    <br>
+
+    <span id="resp"></span>
+
+    <script>
+        function fcalcular(){
+            let cafe = parseInt(document.getElementById("cafe").value)
+            let almoco = parseInt(document.getElementById("almoco").value)
+            let jantar= parseInt(document.getElementById("jantar").value)
+            let lanche= parseInt(document.getElementById("lanche").value)
+            let resp= cafe + almoco + jantar + lanche
+            document.getElementById("resp").innerHTML = resp
+        }
+
+    </script>
+
+</body>
+</html>   

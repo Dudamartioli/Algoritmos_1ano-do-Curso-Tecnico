@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    Ler 3 valores (considere que não serão informados valores iguais) e escrever a soma dos 2 maiores.
+    -->
+
+    <label for="inputn1">Valor 1</label>
+    <input type="number" id="inputn1">
+    <br>
+    <label for="inoutn2">Valor 2</label>
+    <input type="number" id="inputn2">
+    <br>
+    <label for="inputn3">Valor 3</label>
+    <input type="number" id="inputn3">
+    <br>
+    <input type="button" value="somar" onclick="fsomar()">
+    <br>
+    <label for="resp">A soma dos 2 maiores valores é:</label>
+    <span id="resp"></span>
+
+    <script>
+        function fsomar() {
+            let n1=parseFloat(document.getElementById("inputn1").value)
+            let n2=parseFloat(document.getElementById("inputn2").value)
+            let n3=parseFloat(document.getElementById("inputn3").value)
+            let resp
+            if(n1>n2&&n3>n2){
+                resp=n1+n3
+            }else if(n1>n3&&n2>n3){
+                resp=n1+n2
+            }else if(n2>n1&&n3>n1){
+                resp=n2+n3
+            }
+            document.getElementById("resp").innerHTML=resp
+        }
+    </script>
+</body>
+</html>

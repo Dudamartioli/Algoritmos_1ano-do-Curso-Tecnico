@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar</title>
+</head>
+
+<body style="background-color: mediumpurple;">
+
+    <h1  style="color: rgb(241, 238, 237);">Gerador de CRUD da Martioli :)</h1>
+    <label for="inputNomeClasse"  style="color: rgb(241, 238, 237);" >Nome da classe:</label>
+    <br>
+    <input type="text" id="inputNomeClasse" style="width: 1480px; height: 20px; background-color: rgb(235, 215, 250);">
+    <br>
+    <label for="inputAtributos"  style="color: rgb(241, 238, 237);" >Atributos (separar com , e sem espaço):</label>
+    <br>
+    <input type="text" id="inputAtributos"  style="width: 1480px; height: 20px;  background-color: rgb(235, 215, 250);" > 
+    <label for="inputTipos"  style="color: rgb(241, 238, 237);" >Tipos (separar com ; e sem espaço):</label>
+    <br>
+    <input type="text" id="inputTipos" style="width: 1480px; height: 20px;  background-color: rgb(235, 215, 250);">
+    <!-- <textarea id="inputAtributos" cols="200" rows="20"></textarea> -->
+    <br><br>
+
+    <input type="button" value="Classe" onclick="gerarClasse()" style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);" >
+    <input type="button" value="HTML" onclick="gerarHTML()"   style="background-color: rgb(152, 95, 206);  color: rgb(241, 238, 237);" >
+    <input type="button" value="Controle" onclick="gerarControle()"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);" >
+
+    <br><br>
+    <textarea name="taCodigoFonte" id="taCodigoFonte" cols="200" rows="40" style="background-color: rgb(235, 215, 250);" ></textarea>
+
+    <script src="./GeradorHTML.js"></script>
+    <script src="./GeradorClasse.js"></script>
+    <script src="./GeradorControle.js"></script>
+
+</body>
+
+</html>

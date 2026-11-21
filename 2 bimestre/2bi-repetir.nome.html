@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetir nome</title>
+</head>
+<body>
+    <h1>Repetir palavra</h1>
+    <label for="inputn"></label>
+    <input type="text" id="inputn">
+    <br>
+    <input type="button" value="Repetir" onclick="frepetir()">
+    <br>
+    <label for="resp"></label>
+    <span id="resp"></span>
+    
+    <script>
+        function frepetir() {
+            let acumule = ""
+            let n = document.getElementById("inputn").value
+            for(let i = 1; i<=10; i++) {
+                acumule = acumule + i+"-"+n+ "<br>"
+            }
+            document.getElementById("resp").innerHTML=acumule
+        }
+           
+    </script>
+</body>
+</html>

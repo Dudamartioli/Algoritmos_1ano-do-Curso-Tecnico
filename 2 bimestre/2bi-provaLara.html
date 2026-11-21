@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 2025</title>
+</head>
+<body>
+    <!--
+    02) Faça um programa usando HTML e Javascript que solicite ao usuário que insira uma data (por exemplo, 26/06/2025). 
+    Seu programa deverá usar um conjunto (vetor) predefinido com os nomes dos meses para obter no nome do mês correspondente e 
+    exibir uma mensagem nesse formato:
+
+    Hoje é 26 de junho de 2025.
+
+    É obrigatório o uso um input do tipo text para ler a data e deve-se usar uma função que receba a data, 
+    processe e devolva a mensagem. Ou seja, são 2 funções. A que é chamada no onclick e mais uma.
+    -->
+    <label for="inputd">Data</label>
+    <input type="text" id="inputd" placeholder="00/00/00">
+    <br>
+    <input type="button" value="exibir" onclick="fexibir()">
+    <br>
+    <span id="resp">...</span>
+
+    <script>
+        function fexibir(){
+            let d=document.getElementById("inputd").value;
+            let d2=d.split("/")
+            let resp= fdata(d2)
+            document.getElementById("resp").innerHTML=resp
+        }
+
+        function fdata(d2){
+            let meses=["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+            let resp = "Hoje é " + d2[0] + " de " + meses[d2[1]-1] + " de " + d2[2]
+            return resp
+        }
+    </script>
+</body>
+</html>

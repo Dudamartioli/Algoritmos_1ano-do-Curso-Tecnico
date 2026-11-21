@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoavaliação 2, ex. 4</title>
+</head>
+<body>
+    <label for="input1">Valor 1</label>
+    <input type="number" id="input1">
+    <br>
+    <label for="input2">Valor 2</label>
+    <input type="number" id="input2">
+    <br>
+    <label for="input3">Valor 3</label>
+    <input type="number" id="input3">
+    <br>
+    <input type="button" value="calcular" onclick="fcalcular()">
+    <br>
+    <label for="respg">Resposta geométrica =</label>
+    <span id="respg"></span>
+    <br>
+    <label for="respp">Resposta ponderada =</label>
+    <span id="respp"></span>
+    <br>
+    <label for="resph">Resposta harmonica =</label>
+    <span id="resph"></span>
+    <br>
+    <label for="respa">Resposta aritmética =</label>
+    <span id="respa"></span>
+
+    <script>
+        function fcalcular(){
+            let v1=parseFloat(document.getElementById("input1").value);
+            let v2=parseFloat(document.getElementById("input2").value);
+            let v3=parseFloat(document.getElementById("input3").value);
+            let respa= (v1+v2+v3)/3
+            let resph= 1/(1/v1+1/v2+1/v3)
+            let respp= (v1+(2*v2)+(3*v3))/6
+            let respg= (v1*v2*v3)**(1/3)
+            document.getElementById("respg").innerHTML=respg
+            document.getElementById("respp").innerHTML=respp
+            document.getElementById("resph").innerHTML=resph
+            document.getElementById("respa").innerHTML=respa
+        }
+    </script>
+</body>
+</html>

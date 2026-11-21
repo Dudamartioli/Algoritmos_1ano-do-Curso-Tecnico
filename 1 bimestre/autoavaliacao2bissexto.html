@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoavaliação 2, ex. 1</title>
+</head>
+<body>
+    <h1>Descubra se o ano é bissexto</h1>
+    <label for="inputa">Ano</label>
+    <input type="number" id="inputa">
+    <br>
+    <input type="button" value="Descubra" onclick="fdescobrir()">
+    <br>
+    <label for="resposta">O ano:</label>
+    <span id="resposta"></span>
+
+    <script>
+        function fdescobrir(){
+            let ano = parseInt(document.getElementById("inputa").value);
+            let resposta = 0;
+            if(ano%4==0) {
+                resposta = "é bissexto"
+            }else{
+                resposta = "não é bissexto"
+            }
+            document.getElementById("resposta").innerHTML = resposta
+        }
+    </script>
+</body>
+</html>

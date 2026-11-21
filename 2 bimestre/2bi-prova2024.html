@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova de 2024</title>
+</head>
+<body>
+    <!--
+    Primeiro exercicio
+    -->
+    <h1>Ex. 1 de 2024</h1>
+    <input type="text" id="inputf" placeholder="digite aqui">
+    <br>
+    <input type="button" value="substituir" onclick="fsubs()">
+    <br>
+    <span id="resp">...</span>
+
+    <script>
+        function fsubs(){
+            let f=document.getElementById("inputf").value
+            let fr=f.toUpperCase()
+            let ns = ""
+            for(let i=0; i<fr.length; i++){
+                if (fr[i] == "A") {
+                    ns = ns + "4";
+                } else if (fr[i] == "E") {
+                    ns = ns + "3"
+                } else if (fr[i] == "S") {
+                    ns = ns + "5"
+                } else if (fr[i] == "T") {
+                    ns = ns + "7"
+                } else if (fr[i] == "G") {
+                    ns = ns + "9"
+                } else if (fr[i] == "I") {
+                    ns = ns + "1"
+                } else if (fr[i] == "B") {
+                    ns = ns + "8"
+                } else if (fr[i] == "O") {
+                    ns = ns + "0"
+                } else {
+                    ns = ns + fr[i]; // se não é nenhuma das "letras especiais", repete a própria letra
+                }
+            }
+            document.getElementById("resp").innerHTML=ns
+        }
+    </script>
+</body>
+</html>

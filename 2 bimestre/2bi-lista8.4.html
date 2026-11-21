@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 8, ex 4</title>
+</head>
+<body>
+    <!--
+    Crie um programa que substitui todas as ocorrências de um determinado caractere por outro em uma string.
+    -->
+    <h1>Subistituição de uma letra que se repete por outra</h1>
+    <label for="inputf">Frase</label>
+    <input type="text" id="inputf" placeholder="escreva aqui">
+    <br>
+    <label for="inputl">Por qual letra você quer substituir?</label>
+    <input type="text" id="inputl" placeholder="digite aqui">
+    <br>
+    <label for="inputs">Qual será a letra substituida?</label>
+    <input type="text" id="inputs" placeholder="digite aqui">
+    <br>
+    <input type="button" value="substituir" onclick="fsubstituir()">
+    <br>
+    <span id="resp">...</span>
+
+    <script>
+        function fsubstituir(){
+            debugger
+            let f=document.getElementById("inputf").value;
+            let l=document.getElementById("inputl").value;
+            let s=document.getElementById("inputs").value;
+            let substituicao = fsubs(l, f, s)
+            document.getElementById("resp").innerHTML=substituicao
+        }
+
+        function fsubs(l, f, s){
+            let resp =" "
+            for(let i=0; i<f.length; i++){
+                if(f[i]==s){
+                    resp = resp + l
+                }else{
+                    resp = resp + f[i]
+                }
+            }
+            return resp
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+<body>
+    <h1>Veja se vc está de recuperação!</h1>
+    <label for="input1">Nota 1</label>
+    <input type="number" id="input1">
+    <br>
+    <label for="input2">Nota 2</label>
+    <input type="number" id="input2">
+    <br>
+    <input type="button" value="descobrir" onclick="fdescobrir()">
+    <br>
+    <label for="media">Média:</label>
+    <span id="media"></span>
+    <br>
+    <label for="resp">Vc está de:</label>
+    <span id="resp"></span>
+
+    <script>
+        function fdescobrir() {
+            let n1=parseFloat(document.getElementById("input1").value);
+            let n2=parseFloat(document.getElementById("input2").value);
+            let media=(n1+n2)/2
+            let resp=0
+            if(media<6.0){
+                resp="recuperação paralela obrigatória"
+            }else if(media<7.5) {
+                resp="faça a recuperação para melhorar sua nota"
+            }else{
+                resp="sua nota lhe garante liberdade de escolha"
+            }
+            document.getElementById("resp").innerHTML=resp
+            document.getElementById("media").innerHTML=media
+        }
+    </script>
+</body>
+</html>

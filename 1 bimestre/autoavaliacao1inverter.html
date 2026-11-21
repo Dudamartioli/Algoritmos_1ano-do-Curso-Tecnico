@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inverter</title>
+</head>
+<body>
+    <label for="inputn1">Valor 1</label>
+    <input type="number" id="inputn1">
+    <br>
+    <label for="inputn2">Valor 2</label>
+    <input type="number" id="inputn2">
+    <br>
+    <input type="button" value="inverter" onclick="finverter()">
+    <br>
+    <label for="resp1">Valor 1:</label>
+    <span id="resp1"></span>
+    <br>
+    <label for="resp2">Valor 2:</label>
+    <span id="resp2"></span>
+
+    <script>
+        function finverter() {
+            let n1=parseFloat(document.getElementById("inputn1").value)
+            let n2=parseFloat(document.getElementById("inputn2").value)
+            let r1=n2
+            let r2=n1
+            document.getElementById("resp1").innerHTML=r1
+            document.getElementById("resp2").innerHTML=r2
+        }
+    </script>
+</body>
+</html>

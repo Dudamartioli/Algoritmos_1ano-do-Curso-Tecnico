@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoavaliação 2, ex. 2</title>
+</head>
+<body>
+    <h1>Faltas e notas</h1>
+    <label for="inputf">Faltas</label>
+    <input type="number" id="inputf">
+    <br>
+    <label for="inputn">Nota</label>
+    <input type="number" id="inputn">
+    <br>
+    <input type="button" value="calcular" onclick="fcalcular()">
+    <br>
+    <label for="resposta">O conteito é:</label>
+    <span id="resposta"></span>
+
+    <script>
+        function fcalcular(){
+            let faltas=parseInt(document.getElementById("inputf").value);
+            let nota=parseInt(document.getElementById("inputn").value);
+            let resposta;
+            if(nota>=9.0&&nota<=10.0&&faltas<=20){
+                resposta="A"
+            }else if(nota>=9.0&&nota<=10.0&&faltas>20){
+                resposta="B"
+            }else if(nota>=7.5&&nota<=8.9&&faltas<=20){
+                resposta="B"
+            }else if(nota>=7.5&&nota<=8.9&&faltas>20){
+                resposta="C"
+            }else if(nota>=5.0&&nota<=7.4&&faltas<=20){
+                resposta="C"
+            }else if(nota>=5.0&&nota<=7.4&&faltas>20){
+                resposta="D"
+            }else if(nota>=4.0&&nota<=4.9&&faltas<=20){
+                resposta="D"
+            }else if(nota>=4.0&&nota<=4.9&&faltas>20){
+                resposta="E"
+            }else if(nota>=0.0&&nota<=3.9&&faltas<=20){
+                resposta="E"
+            }else{
+                resposta="E"
+            }
+            document.getElementById("resposta").innerHTML = resposta
+        }
+    </script>
+</body>
+</html>

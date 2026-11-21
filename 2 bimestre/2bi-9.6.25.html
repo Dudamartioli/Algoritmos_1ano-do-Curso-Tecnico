@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09/06/2025</title>
+</head>
+<body>
+    <h1>Somatória de 1 a 5 multiplicada por 2</h1>
+    <input type="button" value="calcular" onclick="fcalcular()">
+    <br>
+    <label for="resp"></label>
+    <span id="resp"></span>
+
+    <script>
+        function fcalcular() {
+            let soma = 0
+            let resp = 0
+            for(let i=1; i<=5; i++){
+                soma = soma + i
+                resp = soma * 2
+            }
+            document.getElementById("resp").innerHTML=resp
+        }
+    </script>
+</body>
+</html>

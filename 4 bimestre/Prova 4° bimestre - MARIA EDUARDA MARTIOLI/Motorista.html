@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Motorista</title>
+</head>
+
+<body   style="background-color: mediumpurple;">
+
+<h1  style="color: rgb(241, 238, 237);">Motorista</h1>
+<label for="inputid_motorista"  style="color: rgb(241, 238, 237);">id_motorista</label>
+<input type="number" name="id_motorista" id="inputid_motorista"  style="background-color: rgb(235, 215, 250);">
+<input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;" style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);" >
+<input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<br><br>
+
+<label for="inputnome" style="color: rgb(241, 238, 237);">nome</label>
+<input type="text" name="inputnome" id="inputnome" style="background-color: rgb(235, 215, 250);">
+<br>
+
+<label for="inputespecialidade" style="color: rgb(241, 238, 237);">especialidade</label>
+<input list="especialidade" name="inputespecialidade" id="inputespecialidade" style="background-color: rgb(235, 215, 250);">
+<datalist id="especialidade">
+    <option value="transporte escolar">
+    <option value="coletivo">
+    <option value="cargas">
+    <option value="passageiros">
+    <option value="cargas perigosas">
+</datalist>
+<br>
+
+<label for="inputtempo_experiencia" style="color: rgb(241, 238, 237);">tempo_experiencia</label>
+<!--<input type="text" name="inputtempo_experiencia" id="inputtempo_experiencia" style="background-color: rgb(235, 215, 250);">-->
+<select id="inputtempo_experiencia" style="background-color: rgb(235, 215, 250);">
+    <option value="">-- Selecione uma opção --</option>
+    <option value="iniciante">Iniciante</option>
+    <option value="experiente">Experiente</option>
+    <option value="profissional">Profissional</option>
+</select>
+<br>
+
+<label for="inputdata_admissao" style="color: rgb(241, 238, 237);">data_admissao</label>
+<input type="date" name="inputdata_admissao" id="inputdata_admissao" style="background-color: rgb(235, 215, 250);">
+<br>
+
+<label for="inputhabilitadoParaMoto" style="color: rgb(241, 238, 237);">habilitadoParaMoto</label>
+<input type="checkbox" name="inputhabilitadoParaMoto" id="inputhabilitadoParaMoto" style="background-color: rgb(235, 215, 250);">
+<br><br>
+
+<label for="inputFiltrarNome" style="color: rgb(241, 238, 237);">Filtrar por Nome</label>
+<input type="text" name="inputFiltrarNome" id="inputFiltrarNome" style="background-color: rgb(235, 215, 250);" placeholder="Qual nome?">
+<input type="button" value="Filtrar" id="inputFiltrarNome" onclick="FiltrarNome()"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<br><br>
+
+<label for="inputFiltrarEspecialidade" style="color: rgb(241, 238, 237);">Filtrar por Especialidade</label>
+<input type="text" name="inputFiltrarEspecialidade" id="inputFiltrarEspecialidade" style="background-color: rgb(235, 215, 250);" placeholder="Qual especialidade?">
+<input type="button" value="Filtrar" id="inputFiltrarEspecialidade" onclick="FiltrarEspecialidade()"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<br><br>
+
+<label for="inputFiltrarTempoDeExperiencia" style="color: rgb(241, 238, 237);">Filtrar Tempo De Experiencia</label>
+<input type="text" name="inputFiltrarTempoDeExperiencia" id="inputFiltrarTempoDeExperiencia" style="background-color: rgb(235, 215, 250);" placeholder="Qual tempo de experiencia?">
+<input type="button" value="Filtrar" id="inputFiltrarTempoDeExperiencia" onclick="FiltrarTempoDeExperiencia()"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<br><br>
+
+<label for="inputListarUltimoNome" style="color: rgb(241, 238, 237);">Listar último Nome</label>
+<input type="text" name="inputListarUltimoNome" id="inputListarUltimoNome" style="background-color: rgb(235, 215, 250);" placeholder="Qual último nome?">
+<input type="button" value="Listar" id="inputListarUltimoNome" onclick="ListarUltimoNome()"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<br><br>
+
+<br><br>
+
+<div id="divAviso" style="color: rgb(241, 238, 237);"></div>
+<br><input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<br><br>
+
+<div id="outputSaida" style="background-color: rgb(235, 215, 250);">...</div>
+<input type="button" value="Persistir" id="btPersisitir" onclick="prepararESalvarCSV()"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+<input type="button" value="Recuperar" id="btRecuperar" onclick="abrirArquivoSalvoEmLocalPermanente()"  style="background-color: rgb(152, 95, 206); color: rgb(241, 238, 237);">
+</body>
+<script src="./Motorista.js"></script>
+<script src="./MotoristaControle.js"></script>
+</html>

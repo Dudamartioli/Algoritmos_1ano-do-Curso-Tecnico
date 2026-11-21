@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 7, ex 9</title>
+</head>
+<body>
+    <!--
+    Faça um programa que leia um nome completo (nome e sobrenome). Escreva esse nome no formato inglês. 
+    Para entrada João Carlos da Silva a saída será Silva, João Carlos Considere que o último nome é o sobrenome.
+    -->
+    <h1>Escrever nome no formato inglês</h1>
+    <label for="inputn">Nome completo (nome e sobrenome)</label>
+    <input type="text" id="inputn" placeholder="escreva aqui">
+    <br>
+    <input type="button" value="transformar" onclick="ftransformar()">
+    <br>
+    <label for="resp"></label>
+    <span id="resp"></span>
+
+    <script>
+        let conjunto = []
+
+        function ftransformar() {
+            let nome=document.getElementById("inputn").value
+            let separado= nome.split(" ")
+            let resp= separado[separado.length-1] + "," + separado[separado.length-2]
+            
+            document.getElementById("resp").innerHTML=resp
+        }
+    </script>
+</body>
+</html>

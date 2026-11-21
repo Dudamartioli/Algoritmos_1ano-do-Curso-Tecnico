@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 5, ex. 4</title>
+</head>
+<body>
+    <!-- 
+    Encontre o dobro de um número inteiro caso ele seja negativo, seu triplo caso seja positivo. 
+    Caso for zero, informe o usuário que é um número neutro ou nulo.
+    -->
+
+    <label for="inputn">Valor</label>
+    <input type="number" id="inputn">
+    <br>
+    <input type="button" value="calcular" onclick="fcalcular()">
+    <br>
+    <label for="resp">O valor é:</label>
+    <span id="resp"></span>
+
+    <script>
+        function fcalcular() {
+            let n=parseFloat(document.getElementById("inputn").value)
+            let resp
+            if(n<0){
+                resp=n*2
+            }else if(n>0){
+                resp=n*3
+            }else{
+                resp="nulo"
+            }
+            document.getElementById("resp").innerHTML=resp
+        }
+    </script>
+</body>
+</html>

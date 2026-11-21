@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 7, ex. 4</title>
+</head>
+<body>
+    <!--
+    Escreva um programa que solicita ao usuário um número inteiro e exibe a tabuada desse número de 1 a 10.
+    -->
+    <h1>Tabuada de 1 a 10</h1>
+    <label for="inputn">Número</label>
+    <input type="number" id="inputn" placeholder="digite aqui">
+    <br>
+    <input type="button" value="mostrar" onclick="fmostrar()">
+    <br>
+    <label for="resp"></label>
+    <span id="resp"></span>
+
+    <script>
+        function fmostrar(){
+            let n = parseInt(document.getElementById("inputn").value)
+            let tabuada = 0
+            for(let i=1; i<=10; i++){
+                tabuada = tabuada + i + "x" + n + "=" + n*i + "<br>"
+            }
+            document.getElementById("resp").innerHTML=tabuada
+        }
+    </script>
+</body>
+</html>

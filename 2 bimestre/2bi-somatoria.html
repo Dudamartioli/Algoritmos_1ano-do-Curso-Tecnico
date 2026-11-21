@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatória</title>
+</head>
+<body>
+    <h1>Informe 3 valores</h1>
+   <label for="inputn"></label>
+   <input type="number" id="inputn" placeholder="digite um número">
+   <br>
+   <input type="button" value="salvar" onclick="fsalvar()">
+   <br>
+   <label for="respn"></label>
+   <span id="respn">[]</span>
+
+   <br>
+   <h1>x² * (z+w)</h1>
+   <input type="button" value="calcular" onclick="fcalcular()">
+   <br>
+   <span id="respc"></span>
+
+
+   <script>
+    let conjunto = []
+
+    function fsalvar() {
+        let elementoInputn = document.getElementById("inputn")
+        let numero = parseFloat(elementoInputn.value)
+        if(!isNaN(numero)){
+            conjunto.push(numero)
+            document.getElementById("respn").innerHTML= "[" + conjunto + "]"
+
+            elementoInputn.value = ""
+            elementoInputn.focus()
+        }else {
+            alert("É PARA INFORMAR VALORES, SONGAMONGA!!!!")
+        }
+        
+    }
+    
+
+    function fcalcular() {
+        if(conjunto.length != 3){
+            alert("informe EXATAMENTE 3 valores")
+        }
+        let x= conjunto[0]
+        let z= conjunto[1]
+        let w= conjunto[2]
+        let respc = (x**2)*(z + w)
+        document.getElementById("respc").innerHTML=respc
+    }
+
+   </script>
+
+</body>
+</html>

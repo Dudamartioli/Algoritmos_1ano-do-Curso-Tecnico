@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista 1, ex 2</title>
+</head>
+<body>
+    <!--
+    Faça um programa que leia um número e mostre como resposta esse número elevado ao cubo.
+    -->
+    <h1>Número elevado ao cubo</h1>
+    <label for="inputn1">Número</label>
+    <input type="number" name="inputn1" id="inputn1">
+    <br>
+    <input type="button" value="calcular" onclick="fcubo()">
+    <br>
+    <label for="resposta">Resposta =</label>
+    <span id="resposta"></span>
+
+    <script>
+        function fcubo() {
+            let n1 = parseFloat(document.getElementById("inputn1").value);
+            let resposta = n1**3;
+            document.getElementById("resposta").innerHTML = resposta;
+        }
+    </script>
+</body>
+</html>

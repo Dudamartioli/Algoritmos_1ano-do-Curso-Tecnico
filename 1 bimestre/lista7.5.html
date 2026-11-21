@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 7, ex.5</title>
+</head>
+<body>
+    <!--
+    Você viajou para os Estados Unidos e descobriu que lá a unidade de medida de temperatura é diferente da do Brasil.
+    Para não ter que acessar um serviço na internet a todo o momento, nem fazer os cálculos manualmente, faça um algoritmo, 
+    e programa em JS, que converte a temperatura informada para a temperatura na outra unidade de medida. 
+    Ou seja, se a temperatura for informada em Celsius o algoritmo deve fornecer a temperatura em Fahrenheit,
+    já se a temperatura for fornecida em Fahrenheit, o resultado deve ser em graus Celsius. As fórmulas de conversão devem ser 
+    pesquisadas na internet.
+    -->
+    <h1>Conversão de temperatura</h1>
+    <label for="inputt">Temperatura</label>
+    <input type="number" id="inputt">
+    <br>
+    <label for="inputu">Qual a unidade de medida?</label>
+    <input type="text" id="inputu">
+    <br>
+    <input type="button" value="converter" onclick="fconverter()">
+    <br>
+    <label for="respcparaf"></label>
+    <span id="respcparaf"></span>
+    <br>
+    <label for="respfparac"></label>
+    <span id="respfparac"></span>
+
+    <script>
+        function fconverter() {
+            let t=parseFloat(document.getElementById("inputt").value)
+            let u=document.getElementById("inputu").textContent
+            let respcparaf
+            let respfparac
+            if(u=="C"||u=="c"||u=="celsius"||u=="Celsius"||u=="CELSIUS"||u=="°c"||u=="°C"){
+                respcparaf= (t*9/5)+32 //c para f
+            }else {
+                respcparaf= t
+            }
+            if(u=="F"||u=="f"||u=="fahrenheit"||u=="Fahrenheit"||u=="FAHRENHEIT"||u=="°F"||u=="°f"){
+                respfparac= (t-32)*5/9 //f para c
+            }else {
+                respfparac= t
+            }
+            document.getElementById("respcparaf").innerHTML= t +"°C equivalem a " + respcparaf + "°F"
+            document.getElementById("respfparac").innerHTML= t + "°F equivalem a " + respfparac + "°C"
+        }
+    </script>
+</body>
+</html>

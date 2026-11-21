@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo bimestre</title>
+</head>
+<body>
+    <!--
+    Desenvolva um programa que leia o valor inicial e final de um intervalo de números números inteiros. 
+    Calcule a média apenas dos pares. Exiba o total de números pares e o valor da média. 
+    Por exemplo, o usuário informa como inicial o número 5 e final o número 12. O programa deverá somar 6+8+10+12. 
+    Calcular a média (36/4 = 9) e exibir: são 4 números pares. A média é 36.
+    -->
+    <h1>Intervalo entre números</h1>
+    <label for="inputn1">Valor inicial</label>
+    <input type="number" id="inputn1">
+    <br>
+    <label for="inputn2">Valor final</label>
+    <input type="number" id="inputn2">
+    <br>
+    <input type="button" value="calcular" onclick="fcalcular()">
+    <br>
+    <label for="respmedia">Média:</label>
+    <span id="respmedia"></span>
+    <br>
+    <label for="respnumeros">A quantidade de números pares é:</label>
+    <span id="respnumeros"></span>
+
+    <script>
+        function fcalcular() {
+            let inicial=parseInt(document.getElementById("inputn1").value)
+            let final=parseInt(document.getElementById("inputn2").value)
+            let soma=0
+            let contapar=0
+            for(let num=inicial; num<=final; num++){ //num++ diz para add 1 no q corresponde a variavel, é um contador
+                if(num%2==0){ //é par?
+                    soma=soma+num //aculumador
+                    contapar=contapar+1 //contador
+                }
+            }
+            let media=soma/contapar
+            document.getElementById("respmedia").innerHTML=media
+            document.getElementById("respnumeros").innerHTML=contapar
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista 1.1</title>
+</head>
+<body>
+    <h1>Nota média de um aluno</h1>
+    <label for="inputn1">Nota 1</label>
+    <input type="number" name="inputn1" id="inputn1">
+    <br>
+    <label for="inputn2">Nota 2</label>
+    <input type="number" name="inputn2" id="inputn2">
+    <br>
+    <label for="inputn3">Nota 3</label>
+    <input type="number" name="inputn3" id="inputn3">
+    <br>
+    <label for="inputn4">Nota 4</label>
+    <input type="number" name="inputn4" id="inputn4">
+    <br>
+    <input type="button" name="calcular"  value="calcular" onclick="fcalcular()">
+    <br>
+    <label for="media">Média =</label>
+    <span id="media"></span>
+
+    <script>
+        function fcalcular() {
+            let n1 = parseFloat(document.getElementById("inputn1").value);
+            let n2 = parseFloat(document.getElementById("inputn2").value);
+            let n3 = parseFloat(document.getElementById("inputn3").value);
+            let n4 = parseFloat(document.getElementById("inputn4").value);
+            let media = (n1+n2+n3+n4)/4;
+            document.getElementById("media").innerHTML = media;
+        }
+    </script>
+</body>
+</html>

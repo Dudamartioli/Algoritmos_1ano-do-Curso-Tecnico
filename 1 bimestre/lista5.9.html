@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    Escreva um algoritmo que verifique se um triângulo é equilátero, isósceles ou escaleno, 
+    com base em seus lados. A identificação de cada tipo de triângulo:
+Equilátero: Um triângulo é equilátero se todos os seus lados têm o mesmo comprimento.
+
+Isósceles: Um triângulo é isósceles se possui dois lados com o mesmo comprimento e um lado diferente.
+
+Escaleno: Um triângulo é escaleno se todos os seus lados têm comprimentos diferentes.
+    -->
+   <h1>Veja se o triângulo é equilátero, isósceles ou escaleno!</h1>
+   <label for="inputl1">Lado 1</label>
+   <input type="number" id="inputl1">
+   <br>
+   <label for="inputl2">Lado 2</label>
+   <input type="number" id="inputl2">
+   <br>
+   <label for="inputl3">Lado 3</label>
+   <input type="number" id="inputl3">
+   <br>
+   <input type="button" value="descobrir" onclick="fdescobrir()">
+   <br>
+   <label for="resp">O triângulo é:</label>
+   <span id="resp"></span>
+
+   <script>
+    function fdescobrir(){
+        let l1=parseFloat(document.getElementById("inputl1").value)
+        let l2=parseFloat(document.getElementById("inputl2").value)
+        let l3=parseFloat(document.getElementById("inputl3").value)
+        let resp
+        if(l1==l2&&l1==l3&&l2==l3){
+            resp="equilátero"
+        }else if(l1!=l2&&l1!=l3&&l2!=l3){
+            resp="escaleno"
+        }else{
+            resp="isósceles"
+        }
+        document.getElementById("resp").innerHTML=resp
+    }
+   </script>
+</body>
+</html>

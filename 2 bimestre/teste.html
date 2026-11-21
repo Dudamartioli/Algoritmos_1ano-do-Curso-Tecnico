@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    <label for="teste"></label>
+    <input type="text" id="teste">
+    <input type="button" value="oi" onclick="oi()">
+    <br>
+    <label for="resp"></label>
+    <span id="resp">..........</span>
+
+
+
+    <script>
+        function oi() {
+            let acumule = ""
+            let n = document.getElementById("teste").value
+            for(let i = 1; i<=10; i++) {
+                acumule = acumule + i+"-"+n+ "<br>"
+            }
+            document.getElementById("resp").innerHTML=acumule
+        }
+           
+        
+    </script>
+</body>
+</html>

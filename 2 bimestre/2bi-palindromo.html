@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindromo</title>
+</head>
+<body>
+    <!--
+    Um palíndromo é uma palavra que lida de trás para frente tem o mesmo significado. Exemplos: arara, ana, ama.
+    -->
+    <h1>A palavra é palindromo?</h1>
+    <label for="inputp">palavra</label>
+    <input type="text" id="inputp">
+    <br>
+    <input type="button" value="descobrir" onclick="fdescobrir()">
+    <br>
+    <label for="resp"></label>
+    <span id="resp"></span>
+
+    <script>
+        function fdescobrir() {
+            debugger
+            let p = document.getElementById("inputp").value
+            let Palindromo = ""
+            let resp = 0
+            for(let i=p.length-1; i>=0; i--){
+                Palindromo = Palindromo + p[i]
+            }
+            if(Palindromo==p){
+                resp = "é um palindromo"
+            }else{
+                resp = "não é um palindromo"
+            }
+            document.getElementById("resp").innerHTML=resp
+        }
+    </script>
+</body>
+</html>

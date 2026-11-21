@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    <h1>Sequencia de fibonacci até o termo informado</h1>
+    <label for="inputtermo">Até qual termo?</label>
+    <input type="number" id="inputtermo">
+    <br>
+    <input type="button" value="gerar" onclick="fgerar()">
+    <br>
+    <label for="resp"></label>
+    <span id="resp"></span>
+
+    <script>
+        function fgerar(){
+        let termo = parseInt(document.getElementById("inputtermo").value)
+        let a = 0
+        let b = 1
+        let resp = a + "," + b
+        let proximonumero = 0
+        for(let i=3; i<=termo; i++){ 
+            proximonumero = a + b
+            resp = resp + "," + proximonumero
+            a=b
+            b=proximonumero
+        }
+        document.getElementById("resp").innerHTML=resp
+    }
+    </script>
+
+</body>
+</html>

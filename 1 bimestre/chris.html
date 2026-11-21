@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sou um macaco</title>
+</head>
+    <label for="inputmacaco">numero de macacos</label>
+    <input type="number" id="inputmacaco">
+    <br>
+    <label for="inputbananas">numero de bananas</label>
+    <input type="number" id="inputbananas">
+    <br>
+    <input type="button" value="chrisar" onclick="funcaolara()">
+    <br>
+    <label for="macacosebananas">quantidade de macacos e bananas =</label>
+    <span id="macacosebananas"></span>
+
+    <script>
+        function funcaolara() {
+            let b = parseFloat(document.getElementById("inputbananas").value)
+            let m = parseFloat(document.getElementById("inputmacaco").value)
+            let chrisar = b + m
+            document.getElementById("macacosebananas").innerHTML = chrisar
+        }
+    </script>
+</body>
+</html>

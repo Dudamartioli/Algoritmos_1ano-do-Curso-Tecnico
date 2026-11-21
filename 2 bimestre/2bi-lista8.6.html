@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 8, ex 6</title>
+</head>
+<body>
+    <!--
+    Desenvolva um algoritmo que conta o número de consoantes em uma string.
+    -->
+    <h1>Número de consoantes</h1>
+    <input type="text" id="inputp" placeholder="escreva aqui">
+    <br>
+    <input type="button" value="ver" onclick="fver()">
+    <br>
+    <span id="resp"></span>
+
+    <script>
+        function fver(){
+            debugger
+            let p= document.getElementById("inputp").value
+            let palavra = p.toUpperCase()
+            let cont = 0
+            for(let i=0; i<palavra.length; i++){
+                if(palavra[i] !="A" && palavra[i] !="E"&& palavra[i]!="I"&&palavra[i]!="O"&&palavra[i]!="U"){
+                    cont = cont + 1
+                }
+            }
+            document.getElementById("resp").innerHTML=cont
+        }
+    </script>
+</body>
+</html>

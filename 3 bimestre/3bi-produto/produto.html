@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+</head>
+
+<body>
+    <h1>Cadastro de Produtos</h1>
+    <label for="id">ID:</label>
+    <input type="number" id="id" name="id"><br><br>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome"><br><br>
+    <label for="precoUnitario">Preço Unitário:</label>
+    <input type="number" step="0.01" id="precoUnitario" name="precoUnitario"><br><br>
+    <label for="quantidadeEstoque">Quantidade em Estoque:</label>
+    <input type="number" id="quantidadeEstoque" name="quantidadeEstoque"><br><br>
+    <label for="categoria">Categoria:</label>
+    <input type="text" id="categoria" name="categoria"><br><br>
+    <label for="unidadeDeMedida">Unidade de Medida:</label>
+    <input type="text" id="unidadeDeMedida" name="unidadeDeMedida"><br><br>
+    <input type="button" value="Inserir produto" onclick="inserirProduto()">
+    <input type="button" value="Dados iniciais" onclick="inserirDadosIniciais()">
+    <input type="button" value="Valor total do estoque" onclick="valorTotalDoEstoque()">
+    <br>
+    <span id="estoque"></span>
+    <div id="outputLista" style="background-color: rgb(168, 127, 255);"></div>
+    <br>
+    <h3>Procure todos os produtos de uma categoria</h3>
+    <input type="text" id="procurarcategoria" placeholder="Digite aqui">
+    <input type="button" value="Procurar" onclick="mostreProdutosDeUmaCategoria()">
+    <br>
+    <span id="respcategoria"></span>
+    
+    <br>
+    <h3>Procure produtos por Preço</h3>
+    <input type="number" id="minimo" placeholder="Valor minimo">
+    <input type="text" id="maximo" placeholder="Valor maximo">
+    <input type="button" value="Procurar" onclick="filtrarProdutosPorPreco()">
+    <br>
+    <span id="resppreco"></span>
+
+    <br>
+    <h3>Ordenar os produtos por ordem alfabética</h3>
+    <input type="button" value="ordenar" onclick="ordenarProdutosPorNome()">
+    <br>
+    <span id="respordemproduto"></span>
+
+    <br>
+    <h3>Ordenar os produtos por preço (ordem crescente)</h3>
+    <input type="button" value="ordenar" onclick="ordenarProdutosPorPreco()">
+    <span id="respordempreco"></span>
+
+    <script src="./produto.js"></script>
+    <script src="./classeproduto.js"></script>
+</body>
+
+</html>

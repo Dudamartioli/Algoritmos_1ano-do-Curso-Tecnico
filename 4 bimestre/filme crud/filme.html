@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CRUD filme</title>
+</head>
+
+<body>
+
+   <h1>Cadastro de filme</h1>
+
+   <label for="inputId">Id</label>
+   <input type="text" name="inputId" id="inputId">
+   <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+
+   <label for="inputTitulo">Título</label>
+   <input type="text" name="inputTitulo" id="inputTitulo">
+   <br>
+   <label for="inputDiretor">Diretor</label>
+   <input type="text" name="inputDiretor" id="inputDiretor">
+   <br>
+   <label for="inputData">Data de lançamento</label>
+   <input type="date" name="inputData" id="inputData">
+   <br>
+   <label for="inputAvaliacao">Avaliação (0 a 10)</label>
+   <select id="inputAvaliacao">
+        <option value="">-- Selecione uma opção --</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+   <br>
+
+   <br><br>
+   <div id="divAviso" style="background-color: rgb(231, 215, 250);"></div>
+   <br>
+   <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+   <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+   <br><br>
+   <!-- <input type="button" value="Listar" onclick="listar()">
+    <br><br> -->
+
+   <div id="outputSaida" style="background-color: rgb(128, 0, 255);">...</div>
+
+   <br>
+   <h1>Filmes com Avaliação acima de 8</h1>
+   <input type="button" value="Filtrar" onclick="fAvaliacao()">
+   <br>
+   <span id="respavaliacao"></span>
+   <br> <br>
+
+   <input type="button" value="Persistir" id="btPersisitir" onclick="prepararESalvarCSV()">
+   <input type="button" value="Recuperar" id="btRecuperar" onclick="abrirArquivoSalvoEmLocalPermanente()">
+   <script src="./filme.js"></script>
+   <script src="./filmeControle.js"></script>
+</body>
+
+</html>

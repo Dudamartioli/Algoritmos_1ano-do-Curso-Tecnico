@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maçãs</title>
+</head>
+<body>
+    <h1>Preço e quantidade de pacotes da compra de maçãs</h1>
+    <label for="inputm">Quantidade de maçãs</label>
+    <input type="number" name="inputm" id="inputm">
+    <br>
+    <input type="button" value="calcular" onclick="fcalcular()">
+    <br>
+    <label for="pacotes">Quantidade de pacotes =</label>
+    <span id="pacotes"></span>
+    <br>
+    <label for="valor">Valor das maçãs =</label>
+    <span id="valor"></span>
+
+    <script>
+        function fcalcular() {
+            let quantidade = parseInt(document.getElementById("inputm").value);
+            let valor;
+            if(quantidade < 12){
+                valor = 0.30 * quantidade;
+            }else{
+                valor = 0.25 * quantidade;
+            }
+            let pacotes = 0
+            if(quantidade%8 == 0){
+                pacotes = quantidade/8
+            }else{
+                pacotes = parseInt(quantidade/8) + 1;
+            }
+            document.getElementById("pacotes").innerHTML = pacotes
+            document.getElementById("valor").innerHTML = valor
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinheiro</title>
+</head>
+<body>
+    <h1>Veja quanto dinheiro vc tem em notas físicas!</h1>
+    <label for="inputr">Valor</label>
+    <input type="number" id="inputr">
+    <br>
+    <input type="button" value="calcular" onclick="fcalcular()">
+    <br>
+    <label for="r200">Notas de 200 =</label>
+    <span id="r200"></span>
+    <br>
+    <label for="r100">Notas de 100 =</label>
+    <span id="r100"></span>
+    <br>
+    <label for="r50">Notas de 50 =</label>
+    <span id="r50"></span>
+    <br>
+    <label for="r20">Notas de 20 =</label>
+    <span id="r20"></span>
+    <br>
+    <label for="r10">Notas de 10 =</label>
+    <span id="r10"></span>
+    <br>
+    <label for="r5">Notas de 5 =</label>
+    <span id="r5"></span>
+    <br>
+    <label for="r1">Notas de 1 =</label>
+    <span id="r1"></span>
+    <br>
+
+    <script>
+        function fcalcular() {
+            let v=parseInt(document.getElementById("inputr").value)
+            let n200=parseInt(v/200)
+            v = v-n200*200
+            let n100=parseInt(v/100)
+            v = v-n100*100
+            let n50=parseInt(v/50)
+            v = v-n50*50
+            let n20=parseInt(v/20)
+            v = v-n20*20
+            let n10=parseInt(v/10)
+            v = v-n10*10
+            let n5=parseInt(v/5)
+            v = v-n5*5
+            let n1=parseInt(v/1)
+            v = v-n1*1
+            document.getElementById("r200").innerHTML=n200
+            document.getElementById("r100").innerHTML=n100
+            document.getElementById("r50").innerHTML=n50
+            document.getElementById("r20").innerHTML=n20
+            document.getElementById("r10").innerHTML=n10
+            document.getElementById("r5").innerHTML=n5
+            document.getElementById("r1").innerHTML=n1
+        }
+    </script>
+ </body>
+</html>

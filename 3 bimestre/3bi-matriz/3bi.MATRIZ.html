@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Adicionar à matriz</title>
+</head>
+
+<body>
+
+    <h1>Definir tamanho da matriz</h1>
+    <input type="number" id="inputLinhas" placeholder="Linhas" min="1">
+    <input type="number" id="inputColunas" placeholder="Colunas" min="1">
+    <button onclick="iniciarMatriz()">Iniciar</button>
+
+    <h3>Inserir número</h3>
+    <input type="number" id="inputNumero" placeholder="Digite um número" disabled>
+    <button onclick="adicionarNumero()" id="btnAdicionar" disabled>Adicionar</button>
+
+    <h3>Matriz armazenada:</h3>
+    <pre id="saidaMatriz">[]</pre>
+
+    <input type="button" value="soma" onclick="somar()">
+    <span id="respsoma"></span>
+
+    <br>
+    <label for="ncoluna">Qual coluna?</label>
+    <input type="number" id="ncoluna">
+    <input type="button" value="somar coluna" onclick="somarcoluna()">
+    <span id="respcoluna"></span>
+
+    <br>
+    <label for="inputlinha">Qual linha?</label>
+    <input type="number" id="inputlinha">
+    <input type="button" value="média linha" onclick="fmedialinha()">
+    <span id="resplinha"></span>
+
+    <br>
+    <input type="button" value="pares" onclick="fpares()">
+    <span id="resppar"></span>
+
+    <br>
+    <input type="button" value="primos" onclick="fprimos()">
+    <span id="respprimos"></span>
+
+    <br>
+    <h3>Posição (linha e coluna) do maior elemento da matriz</h3>
+    <input type="button" value="ver" onclick="fposicao()">
+    <span id="respposicao"></span>
+
+    <br>
+    <h3>Multiplicação de dois números da matriz, informe as posições</h3>
+    <input type="number" id="n1linha" placeholder="Primeiro número linha">
+    <input type="number" id="n1coluna" placeholder="Primeiro número coluna">
+    <br>
+    <input type="number" id="n2linha" placeholder="Segundo número linha">
+    <input type="number" id="n2coluna" placeholder="Segundo número coluna">
+    <br>
+    <input type="button" value="multiplicar" onclick="fmultiplicacao()">
+    <span id="respmultiplicacao"></span>
+
+    <br>
+    <h3>Separação dos elementos pares e ímpares da matriz em 2 vetores distintos</h3>
+    <input type="button" value="separar" onclick="fseparar()">
+    <span id="respseparado"></span>
+
+    <br>
+    <h3>Esse número está na matriz?</h3>
+    <input type="number" id="inputn" placeholder="Digite o número">
+    <input type="button" value="procurar" onclick="fprocurar()">
+    <br>
+    <span id="respn"></span>
+
+    <br>
+    <h3>Esse número está quantas vezes na matriz?</h3>
+    <input type="number" id="inputn2" placeholder="Digite o número">
+    <input type="button" value="contar" onclick="fcontar()">
+    <br>
+    <span id="respn2"></span>
+
+</body>
+
+<script src="./scritp.matriz.js"></script>
+
+</html>
